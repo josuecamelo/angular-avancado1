@@ -14,7 +14,7 @@ module.exports = function($scope, $http, $filter) {
         });
     };
     var addClients = function(client){
-        $http.post('http://localhost:8001',client).success(function(data,status){
+        $http.post('http://localhost:8001',client).then(function(data,status){
             console.log(data);
             console.log(status);
             listClients();
@@ -22,7 +22,7 @@ module.exports = function($scope, $http, $filter) {
     };
     var destroyClients = function(client){
         client.delete = true;
-        $http.post('post.php',client).success(function(data,status){
+        $http.post('post.php',client).then(function(data,status){
             console.log(data);
             console.log(status);
         });

@@ -8,17 +8,22 @@ module.exports = function(){
             element.bind("keyup",function(){
                 var _formatTel = function(value){
                     value = value.replace(/[^0-9]+/g,"");
+
                     if(value.length > 4 && value.length <= 8){
                         value = value.substring(0,4) + "-" + value.substring(4,8);
                     }else if(value.length > 4){
                         value = value.substring(0,5) + "-" + value.substring(5,9);
                     }
+
                     return value;
                 };
                 //console.log(ctrl.$viewValue);
                 ctrl.$setViewValue(_formatTel(ctrl.$viewValue));
                 ctrl.$render();
             });
+
+
+            //interceptando para salvar sem mascara
             ctrl.$parsers.push(function(value){
                 if(value.length > 8){
                     //value = value.replace(/[^0-9]+/g,"");
@@ -26,7 +31,6 @@ module.exports = function(){
                 }
 
             });
-
         }
     };
 };
