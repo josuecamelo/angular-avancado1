@@ -1,12 +1,16 @@
-module.exports = function($scope,$http) {
-    $scope.name = "My Pizza";
+module.exports = function($scope, $http, $filter) {
+    $scope.name = $filter('uppercase')("My Pizza");
+    $scope.day = new Date();
+    $scope.total = 24.95;
     $scope.clients = [];
 
     var listClients = function(){
-        $http.get('http://localhost:8001').success(function(data,status){
-            console.log(data);
-            console.log(status);
-            $scope.clients = data;
+        $http.get('http://localhost:8001').then(function(data,status){
+            //console.log(data);
+            //console.log(status);
+            //$scope.clients.data = data;
+            //console.log(data.data)
+            $scope.clients = data.data;
         });
     };
     var addClients = function(client){
