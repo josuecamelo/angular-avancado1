@@ -48,6 +48,11 @@ if($post){
     }
 }
 
+if(isset($_GET['id'])){
+    $date = find($_GET['id']);
+    echo json_encode($date);exit;
+}
+
 $date = listAll();
 echo json_encode($date);exit;
 

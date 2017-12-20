@@ -10,7 +10,7 @@ module.exports = function($scope,$filter,clientAPIService,configValue,routeInfo,
 
     var listClient = function(){
         clientAPIService.getClient($routeParams.id).then(function(data,status){
-            //console.log(data);
+            console.log(data);
             //console.log(status);
             $scope.client = data.data;
         });
