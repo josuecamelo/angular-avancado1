@@ -2,15 +2,11 @@
  * Created by josuecamelo on 20/12/17.
  */
 module.exports = function($http){
-    var _getClients = function(){
+    this.getClients = function(){
         return $http.get('http://localhost:8001');
     };
-    var _saveClients = function(client){
+    this.saveClients = function(client){
         return $http.post('http://localhost:8001',client);
     };
 
-    return {
-        getClients:_getClients,
-        saveClients:_saveClients
-    };
 };

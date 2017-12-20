@@ -1,4 +1,4 @@
-module.exports = function($scope, $http, $filter, clientAPIService) {
+module.exports = function($scope, $http, $filter, clientAPIService, clientTestService) {
     $scope.name = $filter('uppercase')("My Pizza");
 
     /*$scope.day = new Date();
@@ -7,7 +7,7 @@ module.exports = function($scope, $http, $filter, clientAPIService) {
     $scope.msg = "Teste";
     $scope.clients = [];
 
-    var listClients = function(){
+    /*var listClients = function(){
         $http.get('http://localhost:8001').then(function(data,status){
             //console.log(data);
             //console.log(status);
@@ -15,8 +15,18 @@ module.exports = function($scope, $http, $filter, clientAPIService) {
             //console.log(data.data)
             $scope.clients = data.data;
         });
+    };*/
+
+    //usando o serviço criado
+    var listClients = function(){
+        clientAPIService.getClients().then(function(data,status){
+            //console.log(data);
+            //console.log(status);
+            $scope.clients = data.data;
+        });
     };
-    var addClients = function(client){
+
+    /*var addClients = function(client){
         $http.post('http://localhost:8001',client).then(function(data,status){
             console.log(data);
             console.log(status);
@@ -28,6 +38,24 @@ module.exports = function($scope, $http, $filter, clientAPIService) {
         $http.post('http://localhost:8001',client).then(function(data,status){
             console.log(data);
             console.log(status);
+        });
+    };*/
+
+    //usando serviço
+    var addClients = function(client){
+        //clientAPIService.saveClients(client).then(function(data,status){
+        clientTestService.saveClients(client).then(function(data,status){
+            //console.log(data);
+            //console.log(status);
+            listClients();
+        });
+        console.log(client);
+    };
+    var destroyClients = function(client){
+        client.delete = true;
+        clientAPIService.saveClients(client).then(function(data,status){
+            //console.log(data);
+            //console.log(status);
         });
     };
 
