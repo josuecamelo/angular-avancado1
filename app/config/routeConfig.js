@@ -12,7 +12,7 @@ module.exports = function($routeProvider){
         }
     });
 
-    $routeProvider.when("/clients",{
+    /*$routeProvider.when("/clients",{
         templateUrl:"view/clients.html",
         controller:"MainController",
         resolve:{
@@ -20,9 +20,9 @@ module.exports = function($routeProvider){
                 return {routeName:"Home",navClass:"navbar-inverse"};
             }
         }
-    });
+    });*/
 
-    /*$routeProvider.when("/clients",{
+    $routeProvider.when("/clients",{
         templateUrl:"view/clients.html",
         controller:"ClientsController",
         resolve:{
@@ -30,7 +30,7 @@ module.exports = function($routeProvider){
                 return {routeName:"Clients List",navClass:"navbar-inverse"};
             }
         }
-    });*/
+    });
 
     /*$routeProvider.when("/client/:id",{
         templateUrl:"view/client.html",
