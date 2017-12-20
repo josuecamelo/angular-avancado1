@@ -1,5 +1,7 @@
-module.exports = function($scope, $http, $filter, clientAPIService, clientTestService) {
-    $scope.name = $filter('uppercase')("My Pizza");
+module.exports = function($scope, $http, $filter, clientAPIService, clientTestService, configValue) {
+    //$scope.name = $filter('uppercase')("My Pizza");
+    //service value
+    $scope.name = $filter("uppercase")(configValue.appName);
 
     /*$scope.day = new Date();
     $scope.total = 24.95;*/

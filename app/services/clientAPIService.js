@@ -1,12 +1,12 @@
 /**
  * Created by josuecamelo on 20/12/17.
  */
-module.exports = function($http){
+module.exports = function($http, configValue){
     var _getClients = function(){
-        return $http.get('http://localhost:8001');
+        return $http.get(configValue.apiURL);
     };
     var _saveClients = function(client){
-        return $http.post('http://localhost:8001',client);
+        return $http.post(configValue.apiURL,client);
     };
 
     return {
