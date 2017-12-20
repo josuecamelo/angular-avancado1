@@ -3,5 +3,5 @@
  */
 module.exports = function(bonusGeneratorProvider){
     console.log(bonusGeneratorProvider.getLength());
-    bonusGeneratorProvider.setLength(5);
+    bonusGeneratorProvider.setLength(10);
 };
