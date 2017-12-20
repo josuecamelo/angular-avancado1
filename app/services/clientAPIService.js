@@ -9,8 +9,14 @@ module.exports = function($http, configValue){
         return $http.post(configValue.apiURL,client);
     };
 
+    //adicionado para visualizar o cliente
+    var _getClient = function(id){
+        return $http.get(configValue.apiURL + '?id=' + id);
+    };
+
     return {
         getClients:_getClients,
-        saveClients:_saveClients
+        saveClients:_saveClients,
+        getClient:_getClient,
     };
 };

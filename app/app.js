@@ -35,5 +35,5 @@ angular.module('app').directive('maskTel',[maskTel]); //registrado directive
 //angular.module('app').controller('MainController',['$scope','$http', '$filter', 'clientAPIService','clientTestService', 'configValue', 'bonusGenerator', 'routeInfo',MainController]);
 //substituindo o de cima
 angular.module('app').controller('MainController',['$scope','$filter','configValue','routeInfo', MainController]);
-//angular.module('app').controller('ClientsController',['$scope','$http','$filter','clientAPIService','clientTestService','configValue','bonusGenerator','routeInfo',ClientsController]);
-//angular.module('app').controller('ClientController',['$scope','$filter','clientAPIService','configValue','routeInfo','$routeParams',ClientController]);
+angular.module('app').controller('ClientsController',['$scope','$http','$filter','clientAPIService','clientTestService','configValue','bonusGenerator','routeInfo',ClientsController]);
+angular.module('app').controller('ClientController',['$scope','$filter','clientAPIService','configValue','routeInfo','$routeParams',ClientController]);

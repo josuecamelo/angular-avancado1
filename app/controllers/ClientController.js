@@ -9,10 +9,10 @@ module.exports = function($scope,$filter,clientAPIService,configValue,routeInfo,
     $scope.navClass = routeInfo.navClass;
 
     var listClient = function(){
-        clientAPIService.getClient($routeParams.id).success(function(data,status){
+        clientAPIService.getClient($routeParams.id).then(function(data,status){
             //console.log(data);
             //console.log(status);
-            $scope.client = data;
+            $scope.client = data.data;
         });
     };
 

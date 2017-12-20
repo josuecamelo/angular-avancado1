@@ -32,7 +32,7 @@ module.exports = function($routeProvider){
         }
     });
 
-    /*$routeProvider.when("/client/:id",{
+    $routeProvider.when("/client/:id",{
         templateUrl:"view/client.html",
         controller:"ClientController",
         resolve:{
@@ -40,7 +40,7 @@ module.exports = function($routeProvider){
                 return {routeName:"Client",navClass:"navbar-inverse"};
             }
         }
-    });*/
+    });
 
     $routeProvider.otherwise({redirectTo:"/home"});
 };

@@ -17,14 +17,14 @@ module.exports = function($scope,$http,$filter,clientAPIService,clientTestServic
 
 
     var listClients = function(){
-        clientAPIService.getClients().success(function(data,status){
+        clientAPIService.getClients().then(function(data,status){
             //console.log(data);
             //console.log(status);
-            $scope.clients = data;
+            $scope.clients = data.data;
         });
     };
     var addClients = function(client){
-        clientTestService.saveClients(client).success(function(data,status){
+        clientTestService.saveClients(client).then(function(data,status){
             //console.log(data);
             //console.log(status);
             listClients();
@@ -32,7 +32,7 @@ module.exports = function($scope,$http,$filter,clientAPIService,clientTestServic
     };
     var destroyClients = function(client){
         client.delete = true;
-        clientAPIService.saveClients(client).success(function(data,status){
+        clientAPIService.saveClients(client).then(function(data,status){
             //console.log(data);
             //console.log(status);
         });
