@@ -2,13 +2,12 @@
  * Created by josuecamelo on 20/12/17.
  */
 module.exports = function($routeProvider){
-
     $routeProvider.when("/home",{
         templateUrl:"view/home.html",
         controller:"MainController",
         resolve:{
-            routeName:function(){
-                return "Home";
+            routeInfo:function(){
+                return {routeName:"Home",navClass:"navbar-default"};
             }
         }
     });
@@ -17,11 +16,31 @@ module.exports = function($routeProvider){
         templateUrl:"view/clients.html",
         controller:"MainController",
         resolve:{
-            routeName:function(){
-                return "Client list";
+            routeInfo:function(){
+                return {routeName:"Home",navClass:"navbar-inverse"};
             }
         }
     });
 
-    $routeProvider.otherwise({redirectTo:"/home"}); //rota default
+    /*$routeProvider.when("/clients",{
+        templateUrl:"view/clients.html",
+        controller:"ClientsController",
+        resolve:{
+            routeInfo:function(){
+                return {routeName:"Clients List",navClass:"navbar-inverse"};
+            }
+        }
+    });*/
+
+    /*$routeProvider.when("/client/:id",{
+        templateUrl:"view/client.html",
+        controller:"ClientController",
+        resolve:{
+            routeInfo:function(){
+                return {routeName:"Client",navClass:"navbar-inverse"};
+            }
+        }
+    });*/
+
+    $routeProvider.otherwise({redirectTo:"/home"});
 };

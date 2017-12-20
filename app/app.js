@@ -29,4 +29,4 @@ angular.module('app').factory('clientAPIService',['$http','configValue',clientAP
 angular.module('app').service('clientTestService',['$http','configValue',clientTestService]); //usando service value
 angular.module('app').directive('maskTel',[maskTel]); //registrado directive
 //angular.module('app').directive('alertMsg',[alertMsg]); //registrado directive
-angular.module('app').controller('MainController',['$scope','$http', '$filter', 'clientAPIService','clientTestService', 'configValue', 'bonusGenerator', 'routeName',MainController]);
+angular.module('app').controller('MainController',['$scope','$http', '$filter', 'clientAPIService','clientTestService', 'configValue', 'bonusGenerator', 'routeInfo',MainController]);
