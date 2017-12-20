@@ -4,7 +4,7 @@ module.exports = function($scope, $http, $filter) {
     /*$scope.day = new Date();
     $scope.total = 24.95;*/
 
-    $scope.msg = "";
+    $scope.msg = "Teste";
     $scope.clients = [];
 
     var listClients = function(){
@@ -25,7 +25,7 @@ module.exports = function($scope, $http, $filter) {
     };
     var destroyClients = function(client){
         client.delete = true;
-        $http.post('post.php',client).then(function(data,status){
+        $http.post('http://localhost:8001',client).then(function(data,status){
             console.log(data);
             console.log(status);
         });
