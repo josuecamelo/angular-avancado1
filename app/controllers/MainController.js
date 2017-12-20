@@ -1,4 +1,4 @@
-module.exports = function($scope, $http, $filter, clientAPIService, clientTestService, configValue, bonusGenerator) {
+module.exports = function($scope, $http, $filter, clientAPIService, clientTestService, configValue, bonusGenerator, routeName) {
     //$scope.name = $filter('uppercase')("My Pizza");
     //service value
     $scope.name = $filter("uppercase")(configValue.appName);
@@ -26,6 +26,8 @@ module.exports = function($scope, $http, $filter, clientAPIService, clientTestSe
             $scope.clients = data.data;
         });
     };*/
+
+    $scope.page = routeName;
 
     //usando o serviço criado
     var listClients = function(){
