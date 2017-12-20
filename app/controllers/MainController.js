@@ -3,11 +3,19 @@ module.exports = function($scope, $http, $filter, clientAPIService, clientTestSe
     //service value
     $scope.name = $filter("uppercase")(configValue.appName);
 
-    /*$scope.day = new Date();
-    $scope.total = 24.95;*/
+    $scope.day = new Date();
+    $scope.total = 24.95;
 
     $scope.msg = "Teste";
     $scope.clients = [];
+
+
+    var bonus = '';
+    for(var i = 5; i>0;--i){
+        bonus += Math.floor(Math.random()*10);
+    }
+
+    $scope.bonus = 'Cod.Bonus: ' + bonus;//bonusGenerator.generator();
 
     /*var listClients = function(){
         $http.get('http://localhost:8001').then(function(data,status){
